@@ -85,11 +85,20 @@
             function ballReset() {
                 if(player1Score >= WINNING_SCORE || player2Score >= WINNING_SCORE) {
                     showWinScreen = true
-                }
+                } else {
 
-                ballSpeedX = -ballSpeedX;
-                ballX = canvas.width/2;
-                ballY = canvas.height/2;
+                    //Reset Ball Speed & Position
+                    if(ballSpeedX < 0) {
+                        ballSpeedX = 10;
+                    } else {
+                        ballSpeedX = -10;
+                    }
+                    ballSpeedY = 4;
+
+                    ballX = canvas.width/2;
+                    ballY = canvas.height/2;
+                }
+                
             }
             
             //Computer Paddle
